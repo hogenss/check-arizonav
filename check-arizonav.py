@@ -31,14 +31,15 @@ driver = uc.Chrome(options=options) #Вывод хрома
 print('Идёт подсчёт жалоб...')
 
 # Переменные
-page = 1
-val = 0
+section = 129 # Раздел жалоб
+page = 1 # Просматриваемая страница
+val = 0 # Количество жалоб
 
 # Бесконечный цикл
 while True:
     try:
         # Открытие браузера + поиск объекта
-        driver.get("https://forum.arizona-v.com/forums/129/page-"+ str(page) + "?last_days=7")
+        driver.get("https://forum.arizona-v.com/forums/"+ section +"/page-"+ str(page) + "?last_days=7")
         element = driver.find_elements(By.CLASS_NAME, "structItem")
         sa = driver.find_elements(By.CLASS_NAME, "pageNav-jump--next")
 
