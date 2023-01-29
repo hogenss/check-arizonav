@@ -38,7 +38,7 @@ val = 0
 while True:
     try:
         # Открытие браузера + поиск объекта
-        driver.get("https://forum.arizona-v.com/forums/126/page-"+ str(page) + "?last_days=7")
+        driver.get("https://forum.arizona-v.com/forums/129/page-"+ str(page) + "?last_days=7")
         element = driver.find_elements(By.CLASS_NAME, "structItem")
         sa = driver.find_elements(By.CLASS_NAME, "pageNav-jump--next")
 
