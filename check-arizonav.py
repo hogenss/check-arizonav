@@ -39,7 +39,7 @@ val = 0 # Количество жалоб
 while True:
     try:
         # Открытие браузера + поиск объекта
-        driver.get("https://forum.arizona-v.com/forums/"+ section +"/page-"+ str(page) + "?last_days=7")
+        driver.get("https://forum.arizona-v.com/forums/"+ str(section) +"/page-"+ str(page) + "?last_days=7")
         element = driver.find_elements(By.CLASS_NAME, "structItem")
         sa = driver.find_elements(By.CLASS_NAME, "pageNav-jump--next")
 
