@@ -3,6 +3,19 @@
 import undetected_chromedriver.v2 as uc
 from selenium.webdriver.common.by import By
 import re
+from os import system, name
+from time import sleep
+
+# Функция очистки консоли
+def clear():  
+    
+    # Для Windows
+    if name == 'nt':  
+        _ = system('cls')  
+    
+    # Для Mac и Linux (либо других систем)
+    else:  
+        _ = system('clear')  
 
 #Установка настроек
 options = uc.ChromeOptions() 
@@ -13,6 +26,7 @@ options.add_argument('--headless') # Скрытие браузера (имеют
 print('Укажите никнейм')
 print('Важно: Указывайте никнейм такой же, какой он есть на форуме.')
 nickname = input() # Ввод никнейма
+clear()
 driver = uc.Chrome(options=options) #Вывод хрома
 print('Идёт подсчёт жалоб...')
 
@@ -24,7 +38,7 @@ val = 0
 while True:
     try:
         # Открытие браузера + поиск объекта
-        driver.get("https://forum.arizona-v.com/forums/129/page-"+ str(page) + "?last_days=7")
+        driver.get("https://forum.arizona-v.com/forums/126/page-"+ str(page) + "?last_days=7")
         element = driver.find_elements(By.CLASS_NAME, "structItem")
         sa = driver.find_elements(By.CLASS_NAME, "pageNav-jump--next")
 
@@ -50,6 +64,8 @@ while True:
         print(ex)
 
 # Вывод после выполнения кода
-print('Количество жалоб - ' + str(val))
-print('Для закрытия приложения нажмите: Ctrl + C')
+clear()
+print('- Никнейм: ' + nickname)
+print('- Количество жалоб: ' + str(val))
+print('Для закрытия приложения 2 раза нажмите: Ctrl + C')
 input()
