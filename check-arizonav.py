@@ -19,8 +19,8 @@ def clear():
 
 #Установка настроек
 options = uc.ChromeOptions() 
-options.headless=False
-options.add_argument('--headless') # Скрытие браузера (имеются с этим проблемы)
+#options.headless=False
+#options.add_argument('--headless') # Скрытие браузера (имеются с этим проблемы)
 
 # Консоль
 print('Укажите никнейм')
